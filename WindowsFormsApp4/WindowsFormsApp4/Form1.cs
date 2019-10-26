@@ -48,7 +48,7 @@ namespace WindowsFormsApp4
                 for (int i = 0; i < (int)((tmp - (int)tmp == 0 && tmp > 0) ? tmp : tmp + 1); i++)
                 {
                     int tmpReadWriteSize = ((fs.Length - offset) < readWriteSize ? (int)(fs.Length - offset) : readWriteSize);
-                    byte[] bytes = new byte[fs.Length];                    //byte[] bytes = new byte[tmpReadWriteSize]; проблема была именно в этой строке
+                    byte[] bytes = new byte[fs.Length];
                     await fs.ReadAsync(bytes, offset, tmpReadWriteSize);
                     await WriteAsync(bytes, offset, tmpReadWriteSize);
                     offset += readWriteSize;
